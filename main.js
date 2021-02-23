@@ -1,5 +1,46 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
+/***/ "/04d":
+/*!******************************************************!*\
+  !*** ./src/app/store/actions/posts/posts.actions.ts ***!
+  \******************************************************/
+/*! exports provided: PostsActionTypes, FetchPosts, FetchPostsSuccess, FetchPostsFailure */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostsActionTypes", function() { return PostsActionTypes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FetchPosts", function() { return FetchPosts; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FetchPostsSuccess", function() { return FetchPostsSuccess; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FetchPostsFailure", function() { return FetchPostsFailure; });
+var PostsActionTypes;
+(function (PostsActionTypes) {
+    PostsActionTypes["LOAD_POSTS"] = "[Posts] Load posts";
+    PostsActionTypes["LOAD_POSTS_SUCCESS"] = "[Posts] Load posts success";
+    PostsActionTypes["LOAD_POSTS_FAILURE"] = "[Posts] Load posts failure";
+})(PostsActionTypes || (PostsActionTypes = {}));
+class FetchPosts {
+    constructor(payload) {
+        this.payload = payload;
+        this.type = PostsActionTypes.LOAD_POSTS;
+    }
+}
+class FetchPostsSuccess {
+    constructor(payload) {
+        this.payload = payload;
+        this.type = PostsActionTypes.LOAD_POSTS_SUCCESS;
+    }
+}
+class FetchPostsFailure {
+    constructor(payload) {
+        this.payload = payload;
+        this.type = PostsActionTypes.LOAD_POSTS_FAILURE;
+    }
+}
+
+
+/***/ }),
+
 /***/ 0:
 /*!***************************!*\
   !*** multi ./src/main.ts ***!
@@ -48,45 +89,6 @@ HeaderComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
                 changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectionStrategy"].OnPush
             }]
     }], null, null); })();
-
-
-/***/ }),
-
-/***/ "6/o9":
-/*!******************************************!*\
-  !*** ./src/app/effects/users.effects.ts ***!
-  \******************************************/
-/*! exports provided: UsersEffects */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UsersEffects", function() { return UsersEffects; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/effects */ "9jGm");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "qCKp");
-/* harmony import */ var _services_users_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/users.service */ "6Qg2");
-
-
-
-
-
-
-
-class UsersEffects {
-    constructor(actions$, usersService) {
-        this.actions$ = actions$;
-        this.usersService = usersService;
-        this.loadUsers$ = Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["createEffect"])(() => this.actions$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["ofType"])('[Users] Load users'), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["mergeMap"])(() => this.usersService.getUsers()
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(users => ({ type: '[Users] Load users success', payload: users })), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(() => Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])({ type: '[Users] Users load error' }))))));
-    }
-}
-UsersEffects.ɵfac = function UsersEffects_Factory(t) { return new (t || UsersEffects)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Actions"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_services_users_service__WEBPACK_IMPORTED_MODULE_4__["UsersService"])); };
-UsersEffects.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: UsersEffects, factory: UsersEffects.ɵfac });
-/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UsersEffects, [{
-        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
-    }], function () { return [{ type: _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Actions"] }, { type: _services_users_service__WEBPACK_IMPORTED_MODULE_4__["UsersService"] }]; }, null); })();
 
 
 /***/ }),
@@ -168,6 +170,89 @@ UsersService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInje
 
 /***/ }),
 
+/***/ "6a3v":
+/*!******************************************************!*\
+  !*** ./src/app/store/actions/users/users.actions.ts ***!
+  \******************************************************/
+/*! exports provided: UsersActionTypes, FetchUsers, FetchUsersSuccess, FetchUsersFailure */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UsersActionTypes", function() { return UsersActionTypes; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FetchUsers", function() { return FetchUsers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FetchUsersSuccess", function() { return FetchUsersSuccess; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FetchUsersFailure", function() { return FetchUsersFailure; });
+var UsersActionTypes;
+(function (UsersActionTypes) {
+    UsersActionTypes["LOAD_USERS"] = "[Users] Load users";
+    UsersActionTypes["LOAD_USERS_SUCCESS"] = "[Users] Load users success";
+    UsersActionTypes["LOAD_USERS_FAILURE"] = "[Users] Users load error";
+})(UsersActionTypes || (UsersActionTypes = {}));
+class FetchUsers {
+    constructor() {
+        this.type = UsersActionTypes.LOAD_USERS;
+    }
+}
+class FetchUsersSuccess {
+    constructor(payload) {
+        this.payload = payload;
+        this.type = UsersActionTypes.LOAD_USERS_SUCCESS;
+    }
+}
+class FetchUsersFailure {
+    constructor(payload) {
+        this.payload = payload;
+        this.type = UsersActionTypes.LOAD_USERS_FAILURE;
+    }
+}
+
+
+/***/ }),
+
+/***/ "896x":
+/*!************************************************!*\
+  !*** ./src/app/store/effects/posts.effects.ts ***!
+  \************************************************/
+/*! exports provided: PostsEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostsEffects", function() { return PostsEffects; });
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/effects */ "9jGm");
+/* harmony import */ var _actions_posts_posts_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/posts/posts.actions */ "/04d");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "qCKp");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _services_posts_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/posts.service */ "jwUf");
+
+
+
+
+
+
+
+
+class PostsEffects {
+    constructor(actions$, postsService) {
+        this.actions$ = actions$;
+        this.postsService = postsService;
+        this.loadPosts$ = Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["createEffect"])(() => this.actions$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["ofType"])(_actions_posts_posts_actions__WEBPACK_IMPORTED_MODULE_1__["PostsActionTypes"].LOAD_POSTS), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["mergeMap"])(
+        // TODO: you have to pass user id to the effect
+        (action) => this.postsService.getPosts(action.payload)
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(data => new _actions_posts_posts_actions__WEBPACK_IMPORTED_MODULE_1__["FetchPostsSuccess"](data)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(error => Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])(new _actions_posts_posts_actions__WEBPACK_IMPORTED_MODULE_1__["FetchPostsFailure"](error)))))));
+    }
+}
+PostsEffects.ɵfac = function PostsEffects_Factory(t) { return new (t || PostsEffects)(_angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["Actions"]), _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵinject"](_services_posts_service__WEBPACK_IMPORTED_MODULE_5__["PostsService"])); };
+PostsEffects.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵɵdefineInjectable"]({ token: PostsEffects, factory: PostsEffects.ɵfac });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_4__["ɵsetClassMetadata"](PostsEffects, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Injectable"]
+    }], function () { return [{ type: _ngrx_effects__WEBPACK_IMPORTED_MODULE_0__["Actions"] }, { type: _services_posts_service__WEBPACK_IMPORTED_MODULE_5__["PostsService"] }]; }, null); })();
+
+
+/***/ }),
+
 /***/ "AytR":
 /*!*****************************************!*\
   !*** ./src/environments/environment.ts ***!
@@ -241,6 +326,8 @@ function UsersComponent_ng_template_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } }
 class UsersComponent {
+    // TODO: correcting these parts according to your NgRx tutorial app materials (...) --
+    //  -- did for users, now implementing for posts...
     constructor(store) {
         this.store = store;
         this.users$ = this.store.select(state => {
@@ -305,6 +392,40 @@ FooterComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCo
                 changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectionStrategy"].OnPush
             }]
     }], null, null); })();
+
+
+/***/ }),
+
+/***/ "MD2O":
+/*!*************************************************!*\
+  !*** ./src/app/store/reducers/posts.reducer.ts ***!
+  \*************************************************/
+/*! exports provided: postsReducer */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "postsReducer", function() { return postsReducer; });
+/* harmony import */ var _actions_posts_posts_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/posts/posts.actions */ "/04d");
+
+const initialState = {
+    posts: []
+};
+function postsReducer(state = initialState, action) {
+    switch (action.type) {
+        case _actions_posts_posts_actions__WEBPACK_IMPORTED_MODULE_0__["PostsActionTypes"].LOAD_POSTS: {
+            return Object.assign({}, state);
+        }
+        case _actions_posts_posts_actions__WEBPACK_IMPORTED_MODULE_0__["PostsActionTypes"].LOAD_POSTS_SUCCESS: {
+            return {
+                posts: action.payload
+            };
+        }
+        default: {
+            return state;
+        }
+    }
+}
 
 
 /***/ }),
@@ -380,8 +501,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_layout_app_layout_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./app-layout/app-layout.component */ "6Ma9");
 /* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ngrx/store */ "l7P3");
 /* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @ngrx/effects */ "9jGm");
-/* harmony import */ var _effects_users_effects__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./effects/users.effects */ "6/o9");
-/* harmony import */ var _reducers_users_reducer__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./reducers/users.reducer */ "qxFs");
+/* harmony import */ var _store_effects_users_effects__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./store/effects/users.effects */ "cwu1");
+/* harmony import */ var _store_reducers_users_reducer__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./store/reducers/users.reducer */ "nyrb");
+/* harmony import */ var _store_reducers_posts_reducer__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./store/reducers/posts.reducer */ "MD2O");
+/* harmony import */ var _store_effects_posts_effects__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./store/effects/posts.effects */ "896x");
+/* harmony import */ var _ngrx_store_devtools__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @ngrx/store-devtools */ "agSv");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../environments/environment */ "AytR");
+
+
+
+
+
 
 
 
@@ -412,8 +542,9 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
             _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"],
             _angular_router__WEBPACK_IMPORTED_MODULE_10__["RouterModule"],
-            _ngrx_store__WEBPACK_IMPORTED_MODULE_13__["StoreModule"].forRoot({ users: _reducers_users_reducer__WEBPACK_IMPORTED_MODULE_16__["usersReducer"] }),
-            _ngrx_effects__WEBPACK_IMPORTED_MODULE_14__["EffectsModule"].forRoot([_effects_users_effects__WEBPACK_IMPORTED_MODULE_15__["UsersEffects"]])
+            _ngrx_store__WEBPACK_IMPORTED_MODULE_13__["StoreModule"].forRoot({ users: _store_reducers_users_reducer__WEBPACK_IMPORTED_MODULE_16__["usersReducer"], posts: _store_reducers_posts_reducer__WEBPACK_IMPORTED_MODULE_17__["postsReducer"] }),
+            _ngrx_effects__WEBPACK_IMPORTED_MODULE_14__["EffectsModule"].forRoot([_store_effects_users_effects__WEBPACK_IMPORTED_MODULE_15__["UsersEffects"], _store_effects_posts_effects__WEBPACK_IMPORTED_MODULE_18__["PostsEffects"]]),
+            _ngrx_store_devtools__WEBPACK_IMPORTED_MODULE_19__["StoreDevtoolsModule"].instrument({ maxAge: 25, logOnly: _environments_environment__WEBPACK_IMPORTED_MODULE_20__["environment"].production })
         ]] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"],
         _components_users_users_component__WEBPACK_IMPORTED_MODULE_4__["UsersComponent"],
@@ -424,7 +555,7 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
         _app_layout_app_layout_component__WEBPACK_IMPORTED_MODULE_12__["AppLayoutComponent"]], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
         _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
         _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"],
-        _angular_router__WEBPACK_IMPORTED_MODULE_10__["RouterModule"], _ngrx_store__WEBPACK_IMPORTED_MODULE_13__["StoreRootModule"], _ngrx_effects__WEBPACK_IMPORTED_MODULE_14__["EffectsRootModule"]] }); })();
+        _angular_router__WEBPACK_IMPORTED_MODULE_10__["RouterModule"], _ngrx_store__WEBPACK_IMPORTED_MODULE_13__["StoreRootModule"], _ngrx_effects__WEBPACK_IMPORTED_MODULE_14__["EffectsRootModule"], _ngrx_store_devtools__WEBPACK_IMPORTED_MODULE_19__["StoreDevtoolsModule"]] }); })();
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
         args: [{
@@ -442,8 +573,9 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                     _app_routing_module__WEBPACK_IMPORTED_MODULE_2__["AppRoutingModule"],
                     _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"],
                     _angular_router__WEBPACK_IMPORTED_MODULE_10__["RouterModule"],
-                    _ngrx_store__WEBPACK_IMPORTED_MODULE_13__["StoreModule"].forRoot({ users: _reducers_users_reducer__WEBPACK_IMPORTED_MODULE_16__["usersReducer"] }),
-                    _ngrx_effects__WEBPACK_IMPORTED_MODULE_14__["EffectsModule"].forRoot([_effects_users_effects__WEBPACK_IMPORTED_MODULE_15__["UsersEffects"]])
+                    _ngrx_store__WEBPACK_IMPORTED_MODULE_13__["StoreModule"].forRoot({ users: _store_reducers_users_reducer__WEBPACK_IMPORTED_MODULE_16__["usersReducer"], posts: _store_reducers_posts_reducer__WEBPACK_IMPORTED_MODULE_17__["postsReducer"] }),
+                    _ngrx_effects__WEBPACK_IMPORTED_MODULE_14__["EffectsModule"].forRoot([_store_effects_users_effects__WEBPACK_IMPORTED_MODULE_15__["UsersEffects"], _store_effects_posts_effects__WEBPACK_IMPORTED_MODULE_18__["PostsEffects"]]),
+                    _ngrx_store_devtools__WEBPACK_IMPORTED_MODULE_19__["StoreDevtoolsModule"].instrument({ maxAge: 25, logOnly: _environments_environment__WEBPACK_IMPORTED_MODULE_20__["environment"].production })
                 ],
                 providers: [
                     _services_users_service__WEBPACK_IMPORTED_MODULE_8__["UsersService"]
@@ -451,6 +583,47 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
                 bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
             }]
     }], null, null); })();
+
+
+/***/ }),
+
+/***/ "cwu1":
+/*!************************************************!*\
+  !*** ./src/app/store/effects/users.effects.ts ***!
+  \************************************************/
+/*! exports provided: UsersEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UsersEffects", function() { return UsersEffects; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/effects */ "9jGm");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ "qCKp");
+/* harmony import */ var _actions_users_users_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../actions/users/users.actions */ "6a3v");
+/* harmony import */ var _services_users_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/users.service */ "6Qg2");
+
+
+
+
+
+
+
+
+class UsersEffects {
+    constructor(actions$, usersService) {
+        this.actions$ = actions$;
+        this.usersService = usersService;
+        this.loadUsers$ = Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["createEffect"])(() => this.actions$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["ofType"])(_actions_users_users_actions__WEBPACK_IMPORTED_MODULE_4__["UsersActionTypes"].LOAD_USERS), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["mergeMap"])(() => this.usersService.getUsers()
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(users => ({ type: _actions_users_users_actions__WEBPACK_IMPORTED_MODULE_4__["UsersActionTypes"].LOAD_USERS_SUCCESS, payload: users })), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(() => Object(rxjs__WEBPACK_IMPORTED_MODULE_3__["of"])({ type: _actions_users_users_actions__WEBPACK_IMPORTED_MODULE_4__["UsersActionTypes"].LOAD_USERS_FAILURE }))))));
+    }
+}
+UsersEffects.ɵfac = function UsersEffects_Factory(t) { return new (t || UsersEffects)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Actions"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵinject"](_services_users_service__WEBPACK_IMPORTED_MODULE_5__["UsersService"])); };
+UsersEffects.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInjectable"]({ token: UsersEffects, factory: UsersEffects.ɵfac });
+/*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](UsersEffects, [{
+        type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"]
+    }], function () { return [{ type: _ngrx_effects__WEBPACK_IMPORTED_MODULE_1__["Actions"] }, { type: _services_users_service__WEBPACK_IMPORTED_MODULE_5__["UsersService"] }]; }, null); })();
 
 
 /***/ }),
@@ -466,12 +639,14 @@ AppModule.ɵinj = _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineInjector
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PostsComponent", function() { return PostsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "fXoL");
-/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/store */ "l7P3");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "tyNb");
-/* harmony import */ var _services_posts_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/posts.service */ "jwUf");
-/* harmony import */ var _services_users_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/users.service */ "6Qg2");
-/* harmony import */ var _user_user_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../user/user.component */ "ytin");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common */ "ofXK");
+/* harmony import */ var _store_actions_posts_posts_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../store/actions/posts/posts.actions */ "/04d");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/store */ "l7P3");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "tyNb");
+/* harmony import */ var _services_posts_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/posts.service */ "jwUf");
+/* harmony import */ var _services_users_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/users.service */ "6Qg2");
+/* harmony import */ var _user_user_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../user/user.component */ "ytin");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common */ "ofXK");
+
 
 
 
@@ -485,9 +660,9 @@ function PostsComponent_ng_container_1_div_1_ng_container_1_Template(rf, ctx) { 
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "img", 9);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
 } if (rf & 2) {
-    const post_r4 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
+    const post_r5 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]().$implicit;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", (post_r4 == null ? null : post_r4.image) || "assets/images/default-post.jpg", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("src", (post_r5 == null ? null : post_r5.image) || "assets/images/default-post.jpg", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵsanitizeUrl"]);
 } }
 function PostsComponent_ng_container_1_div_1_ng_template_2_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "img", 10);
@@ -509,27 +684,27 @@ function PostsComponent_ng_container_1_div_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 } if (rf & 2) {
-    const post_r4 = ctx.$implicit;
-    const _r6 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](3);
+    const post_r5 = ctx.$implicit;
+    const _r7 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", post_r4 == null ? null : post_r4.image)("ngIfElse", _r6);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", post_r5 == null ? null : post_r5.image)("ngIfElse", _r7);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](5);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](post_r4.content);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](post_r5.content);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](post_r4.editedAt);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](post_r5.editedAt);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](2);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](post_r4.createAt);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate"](post_r5.createAt);
 } }
 function PostsComponent_ng_container_1_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerStart"](0);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, PostsComponent_ng_container_1_div_1_Template, 11, 5, "div", 3);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementContainerEnd"]();
 } if (rf & 2) {
-    const ctx_r0 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵnextContext"]();
+    const posts_r3 = ctx.ngIf;
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx_r0.posts);
+    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", posts_r3);
 } }
-function PostsComponent_ng_template_2_Template(rf, ctx) { if (rf & 1) {
+function PostsComponent_ng_template_3_Template(rf, ctx) { if (rf & 1) {
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 11);
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "p");
     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, "Something's wrong with the API, wait a couple of seconds and reload the page");
@@ -547,28 +722,30 @@ class PostsComponent {
         this.route.params
             .subscribe(params => {
             this.userId = params.userId;
-            this.postsService.getPosts(params.userId)
-                .subscribe(posts => {
-                this.posts = posts;
-            });
         });
+        this.store.dispatch({ type: _store_actions_posts_posts_actions__WEBPACK_IMPORTED_MODULE_1__["PostsActionTypes"].LOAD_POSTS, payload: this.userId });
         this.usersService.getUsers()
             .subscribe(users => {
             this.user = users.find(user => user.id === this.userId);
         });
+        this.posts$ = this.store.select(store => {
+            // @ts-ignore
+            return store.posts.posts;
+        });
     }
 }
-PostsComponent.ɵfac = function PostsComponent_Factory(t) { return new (t || PostsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_1__["Store"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_posts_service__WEBPACK_IMPORTED_MODULE_3__["PostsService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_users_service__WEBPACK_IMPORTED_MODULE_4__["UsersService"])); };
-PostsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: PostsComponent, selectors: [["app-posts"]], decls: 4, vars: 4, consts: [[3, "user", "hideButton"], [4, "ngIf", "ngIfElse"], ["apiError", ""], ["class", "post", 4, "ngFor", "ngForOf"], [1, "post"], ["defaultImage", ""], [1, "post__content"], [1, "post__edited-at"], [1, "post__created-at"], ["height", "512", "width", "672", "alt", "post image", 3, "src"], ["src", "assets/images/default-post.jpg", "height", "512", "width", "672", "alt", "post image"], [1, "api-error"]], template: function PostsComponent_Template(rf, ctx) { if (rf & 1) {
+PostsComponent.ɵfac = function PostsComponent_Factory(t) { return new (t || PostsComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_posts_service__WEBPACK_IMPORTED_MODULE_4__["PostsService"]), _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdirectiveInject"](_services_users_service__WEBPACK_IMPORTED_MODULE_5__["UsersService"])); };
+PostsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({ type: PostsComponent, selectors: [["app-posts"]], decls: 5, vars: 6, consts: [[3, "user", "hideButton"], [4, "ngIf", "ngIfElse"], ["apiError", ""], ["class", "post", 4, "ngFor", "ngForOf"], [1, "post"], ["defaultImage", ""], [1, "post__content"], [1, "post__edited-at"], [1, "post__created-at"], ["height", "512", "width", "672", "alt", "post image", 3, "src"], ["src", "assets/images/default-post.jpg", "height", "512", "width", "672", "alt", "post image"], [1, "api-error"]], template: function PostsComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](0, "app-user", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](1, PostsComponent_ng_container_1_Template, 2, 1, "ng-container", 1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](2, PostsComponent_ng_template_2_Template, 3, 0, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipe"](2, "async");
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](3, PostsComponent_ng_template_3_Template, 3, 0, "ng-template", null, 2, _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplateRefExtractor"]);
     } if (rf & 2) {
-        const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](3);
+        const _r1 = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵreference"](4);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("user", ctx.user)("hideButton", true);
         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", ctx.posts)("ngIfElse", _r1);
-    } }, directives: [_user_user_component__WEBPACK_IMPORTED_MODULE_5__["UserComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_6__["NgForOf"]], styles: [".post[_ngcontent-%COMP%] {\n  width: 65%;\n  margin: 14px auto;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  align-items: center;\n  background-color: #fffcf0;\n}\n.post[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  margin: 40px;\n  border: 16px solid;\n  border-image: linear-gradient(#f6b73c, #4d9f0c) 2;\n}\n.post__content[_ngcontent-%COMP%] {\n  padding-bottom: 14px;\n}\n.post__go-back[_ngcontent-%COMP%] {\n  margin: 40px;\n}\n.post__btn-container[_ngcontent-%COMP%] {\n  margin-left: auto;\n}\n.api-error[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  margin: 0 auto;\n  background-color: #fffcf0;\n  width: 65%;\n  height: 32.5%;\n  padding: 20px 0;\n  font-size: 26px;\n  margin-bottom: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wb3N0cy9wb3N0cy5jb21wb25lbnQuc2NzcyIsInNyYy9hc3NldHMvc3R5bGVzL2Zvci1pbXBvcnQvX2dlbmVyYWwuc2NzcyIsInNyYy9hc3NldHMvc3R5bGVzL2Zvci1pbXBvcnQvX3BhbGV0dGUuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUNFLFVDVVc7RURUWCxpQkFBQTtFQUNBLGFBQUE7RUFDQSxzQkFBQTtFQUNBLDZCQUFBO0VBQ0EsbUJBQUE7RUFDQSx5QkVOVztBRktiO0FBR0U7RUFDRSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxpREFBQTtBQURKO0FBSUU7RUFDRSxvQkNNVTtBRFJkO0FBS0U7RUFDRSxZQUFBO0FBSEo7QUFNRTtFQUNFLGlCQUFBO0FBSko7QUFRQTtFQUNFLGFBQUE7RUFDQSx1QkFBQTtFQUNBLGNBQUE7RUFDQSx5QkUvQlc7RUZnQ1gsVUN0Qlc7RUR1QlgsYUFBQTtFQUNBLGVBQUE7RUFDQSxlQ2hDZTtFRGlDZixtQkFBQTtBQUxGIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9wb3N0cy9wb3N0cy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgXCJzcmMvYXNzZXRzL3N0eWxlcy9hbGxcIjtcclxuXHJcbi5wb3N0IHtcclxuICB3aWR0aDogJHVzZXItd2lkdGg7XHJcbiAgbWFyZ2luOiAkdXNlci1tYXJnaW4gYXV0bztcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1hcm91bmQ7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAkdXNlci1jb2xvcjtcclxuXHJcbiAgaW1nIHtcclxuICAgIG1hcmdpbjogNDBweDtcclxuICAgIGJvcmRlcjogMTZweCBzb2xpZDtcclxuICAgIGJvcmRlci1pbWFnZTogbGluZWFyLWdyYWRpZW50KCRsaW5lYXItZ3JhZGllbnQtZnJvbSwgJGxpbmVhci1ncmFkaWVudC10bykgJGJvcmRlci1wYXR0ZXJuLXdpZHRoO1xyXG4gIH1cclxuXHJcbiAgJl9fY29udGVudCB7XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogJHVzZXItbWFyZ2luO1xyXG4gIH1cclxuXHJcbiAgJl9fZ28tYmFjayB7XHJcbiAgICBtYXJnaW46IDQwcHg7XHJcbiAgfVxyXG5cclxuICAmX19idG4tY29udGFpbmVyIHtcclxuICAgIG1hcmdpbi1sZWZ0OiBhdXRvO1xyXG4gIH1cclxufVxyXG5cclxuLmFwaS1lcnJvciB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBtYXJnaW46ICRtYXJnaW4tMCBhdXRvO1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICR1c2VyLWNvbG9yO1xyXG4gIHdpZHRoOiAkdXNlci13aWR0aDtcclxuICBoZWlnaHQ6ICR1c2VyLXdpZHRoIC8gMjtcclxuICBwYWRkaW5nOiAkZm9udC1zaXplLTIwcHggMDtcclxuICBmb250LXNpemU6ICRmb250LXNpemUtMjZweDtcclxuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xyXG59XHJcbiIsIlxyXG4vLyBoZWFkZXIgZm9udC1zaXplXHJcbiRoZWFkZXItZm9udC1zaXplOiAzNnB4O1xyXG4kaGVhZGVyLWhlaWdodDogMTAwcHg7XHJcbiRmb290ZXItaGVpZ2h0OiAkaGVhZGVyLWhlaWdodCAqIDMuNTtcclxuJGZvbnQtc2l6ZS0yMHB4OiAyMHB4O1xyXG4kZm9udC1zaXplLTI2cHg6IDI2cHg7XHJcbiRtYXJnaW4tMjA6IDIwcHg7XHJcbiRjb3B5cmlnaHQtcGFkZGluZzogNTBweDtcclxuJG1pbi13aWR0aDogMTUwMHB4O1xyXG4kYm94LXNoYWRvdy13aWR0aDogNHB4O1xyXG5cclxuJHVzZXItYm9yZGVyLXJhZGl1czogNnB4O1xyXG4kdXNlci13aWR0aDogNjUlO1xyXG4kdXNlci1zdGF0aXN0aWNzLXJpZ2h0LW1hcmdpbjogMC4xNSAqICR1c2VyLXdpZHRoO1xyXG4kaW1nLXBlcmNlbnRhZ2U6IDE1JTtcclxuJHVzZXItaGVpZ2h0OiAyNTBweDtcclxuJGZ1bGwtaGVpZ2h0OiAxMDAlO1xyXG5cclxuLy8gZnVsbCB3aWR0aFxyXG4kZnVsbC13aWR0aDogMTAwJTtcclxuJHNtYWxsLWJvcmRlci13aWR0aDogMXB4O1xyXG5cclxuJG1hcmdpbi0wOiAwO1xyXG4kdXNlci1tYXJnaW46IDE0cHg7IC8vIG1hcmdpbiBiZXR3ZWVuIGNhcmRzXHJcbiRib3JkZXItcGF0dGVybi13aWR0aDogMjtcclxuXHJcbi8vIHNldCBpbWFnZSBkaW1lbnNpb25zXHJcbiRpbWctZGltZW5zaW9uczogMTUwcHg7XHJcbiIsIlxyXG4kaGVhZGVyLWNvbG9yOiByZ2IoMTY0LCAxNjUsIDg5KTtcclxuJGJvZHktY29sb3I6IHJnYmEoMTI4LDEyOCwxMjgsIDAuNSk7XHJcbiR1c2VyLWNvbG9yOiAjZmZmY2YwO1xyXG4kYnV0dG9uLWNvbG9yOiAjY2NiNjYwO1xyXG4kZm9vdGVyLWNvbG9yOiAkaGVhZGVyLWNvbG9yO1xyXG5cclxuJGxpbmstYm9yZGVyOiAjNjY2MTYxO1xyXG4kbGluay1jb2xvcjogIzAwNjBCNjtcclxuJGxpbmstYWN0aXZlOiAjMDBBMEM2O1xyXG5cclxuJGJveC1zaGFkb3c6IHJnYmEoMCwgMCwgMCwgMC4yNSk7XHJcblxyXG4kbGluZWFyLWdyYWRpZW50LWZyb206ICNmNmI3M2M7XHJcbiRsaW5lYXItZ3JhZGllbnQtdG86ICM0ZDlmMGM7XHJcbiJdfQ== */"], changeDetection: 0 });
+        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngIf", _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵpipeBind1"](2, 4, ctx.posts$))("ngIfElse", _r1);
+    } }, directives: [_user_user_component__WEBPACK_IMPORTED_MODULE_6__["UserComponent"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgIf"], _angular_common__WEBPACK_IMPORTED_MODULE_7__["NgForOf"]], pipes: [_angular_common__WEBPACK_IMPORTED_MODULE_7__["AsyncPipe"]], styles: [".post[_ngcontent-%COMP%] {\n  width: 65%;\n  margin: 14px auto;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  align-items: center;\n  background-color: #fffcf0;\n}\n.post[_ngcontent-%COMP%]   img[_ngcontent-%COMP%] {\n  margin: 40px;\n  border: 16px solid;\n  border-image: linear-gradient(#f6b73c, #4d9f0c) 2;\n}\n.post__content[_ngcontent-%COMP%] {\n  padding-bottom: 14px;\n}\n.post__go-back[_ngcontent-%COMP%] {\n  margin: 40px;\n}\n.post__btn-container[_ngcontent-%COMP%] {\n  margin-left: auto;\n}\n.api-error[_ngcontent-%COMP%] {\n  display: flex;\n  justify-content: center;\n  margin: 0 auto;\n  background-color: #fffcf0;\n  width: 65%;\n  height: 32.5%;\n  padding: 20px 0;\n  font-size: 26px;\n  margin-bottom: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9wb3N0cy9wb3N0cy5jb21wb25lbnQuc2NzcyIsInNyYy9hc3NldHMvc3R5bGVzL2Zvci1pbXBvcnQvX2dlbmVyYWwuc2NzcyIsInNyYy9hc3NldHMvc3R5bGVzL2Zvci1pbXBvcnQvX3BhbGV0dGUuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUNFLFVDVVc7RURUWCxpQkFBQTtFQUNBLGFBQUE7RUFDQSxzQkFBQTtFQUNBLDZCQUFBO0VBQ0EsbUJBQUE7RUFDQSx5QkVOVztBRktiO0FBR0U7RUFDRSxZQUFBO0VBQ0Esa0JBQUE7RUFDQSxpREFBQTtBQURKO0FBSUU7RUFDRSxvQkNNVTtBRFJkO0FBS0U7RUFDRSxZQUFBO0FBSEo7QUFNRTtFQUNFLGlCQUFBO0FBSko7QUFRQTtFQUNFLGFBQUE7RUFDQSx1QkFBQTtFQUNBLGNBQUE7RUFDQSx5QkUvQlc7RUZnQ1gsVUN0Qlc7RUR1QlgsYUFBQTtFQUNBLGVBQUE7RUFDQSxlQ2hDZTtFRGlDZixtQkFBQTtBQUxGIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50cy9wb3N0cy9wb3N0cy5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgXCJzcmMvYXNzZXRzL3N0eWxlcy9hbGxcIjtcclxuXHJcbi5wb3N0IHtcclxuICB3aWR0aDogJHVzZXItd2lkdGg7XHJcbiAgbWFyZ2luOiAkdXNlci1tYXJnaW4gYXV0bztcclxuICBkaXNwbGF5OiBmbGV4O1xyXG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XHJcbiAganVzdGlmeS1jb250ZW50OiBzcGFjZS1hcm91bmQ7XHJcbiAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxuICBiYWNrZ3JvdW5kLWNvbG9yOiAkdXNlci1jb2xvcjtcclxuXHJcbiAgaW1nIHtcclxuICAgIG1hcmdpbjogNDBweDtcclxuICAgIGJvcmRlcjogMTZweCBzb2xpZDtcclxuICAgIGJvcmRlci1pbWFnZTogbGluZWFyLWdyYWRpZW50KCRsaW5lYXItZ3JhZGllbnQtZnJvbSwgJGxpbmVhci1ncmFkaWVudC10bykgJGJvcmRlci1wYXR0ZXJuLXdpZHRoO1xyXG4gIH1cclxuXHJcbiAgJl9fY29udGVudCB7XHJcbiAgICBwYWRkaW5nLWJvdHRvbTogJHVzZXItbWFyZ2luO1xyXG4gIH1cclxuXHJcbiAgJl9fZ28tYmFjayB7XHJcbiAgICBtYXJnaW46IDQwcHg7XHJcbiAgfVxyXG5cclxuICAmX19idG4tY29udGFpbmVyIHtcclxuICAgIG1hcmdpbi1sZWZ0OiBhdXRvO1xyXG4gIH1cclxufVxyXG5cclxuLmFwaS1lcnJvciB7XHJcbiAgZGlzcGxheTogZmxleDtcclxuICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICBtYXJnaW46ICRtYXJnaW4tMCBhdXRvO1xyXG4gIGJhY2tncm91bmQtY29sb3I6ICR1c2VyLWNvbG9yO1xyXG4gIHdpZHRoOiAkdXNlci13aWR0aDtcclxuICBoZWlnaHQ6ICR1c2VyLXdpZHRoIC8gMjtcclxuICBwYWRkaW5nOiAkZm9udC1zaXplLTIwcHggMDtcclxuICBmb250LXNpemU6ICRmb250LXNpemUtMjZweDtcclxuICBtYXJnaW4tYm90dG9tOiAyMHB4O1xyXG59XHJcbiIsIlxyXG4vLyBoZWFkZXIgZm9udC1zaXplXHJcbiRoZWFkZXItZm9udC1zaXplOiAzNnB4O1xyXG4kaGVhZGVyLWhlaWdodDogMTAwcHg7XHJcbiRmb290ZXItaGVpZ2h0OiAkaGVhZGVyLWhlaWdodCAqIDMuNTtcclxuJGZvbnQtc2l6ZS0yMHB4OiAyMHB4O1xyXG4kZm9udC1zaXplLTI2cHg6IDI2cHg7XHJcbiRtYXJnaW4tMjA6IDIwcHg7XHJcbiRjb3B5cmlnaHQtcGFkZGluZzogNTBweDtcclxuJG1pbi13aWR0aDogMTUwMHB4O1xyXG4kYm94LXNoYWRvdy13aWR0aDogNHB4O1xyXG5cclxuJHVzZXItYm9yZGVyLXJhZGl1czogNnB4O1xyXG4kdXNlci13aWR0aDogNjUlO1xyXG4kdXNlci1zdGF0aXN0aWNzLXJpZ2h0LW1hcmdpbjogMC4xNSAqICR1c2VyLXdpZHRoO1xyXG4kaW1nLXBlcmNlbnRhZ2U6IDE1JTtcclxuJHVzZXItaGVpZ2h0OiAyNTBweDtcclxuJGZ1bGwtaGVpZ2h0OiAxMDAlO1xyXG5cclxuLy8gZnVsbCB3aWR0aFxyXG4kZnVsbC13aWR0aDogMTAwJTtcclxuJHNtYWxsLWJvcmRlci13aWR0aDogMXB4O1xyXG5cclxuJG1hcmdpbi0wOiAwO1xyXG4kdXNlci1tYXJnaW46IDE0cHg7IC8vIG1hcmdpbiBiZXR3ZWVuIGNhcmRzXHJcbiRib3JkZXItcGF0dGVybi13aWR0aDogMjtcclxuXHJcbi8vIHNldCBpbWFnZSBkaW1lbnNpb25zXHJcbiRpbWctZGltZW5zaW9uczogMTUwcHg7XHJcbiIsIlxyXG4kaGVhZGVyLWNvbG9yOiByZ2IoMTY0LCAxNjUsIDg5KTtcclxuJGJvZHktY29sb3I6IHJnYmEoMTI4LDEyOCwxMjgsIDAuNSk7XHJcbiR1c2VyLWNvbG9yOiAjZmZmY2YwO1xyXG4kYnV0dG9uLWNvbG9yOiAjY2NiNjYwO1xyXG4kZm9vdGVyLWNvbG9yOiAkaGVhZGVyLWNvbG9yO1xyXG5cclxuJGxpbmstYm9yZGVyOiAjNjY2MTYxO1xyXG4kbGluay1jb2xvcjogIzAwNjBCNjtcclxuJGxpbmstYWN0aXZlOiAjMDBBMEM2O1xyXG5cclxuJGJveC1zaGFkb3c6IHJnYmEoMCwgMCwgMCwgMC4yNSk7XHJcblxyXG4kbGluZWFyLWdyYWRpZW50LWZyb206ICNmNmI3M2M7XHJcbiRsaW5lYXItZ3JhZGllbnQtdG86ICM0ZDlmMGM7XHJcbiJdfQ== */"], changeDetection: 0 });
 /*@__PURE__*/ (function () { _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵsetClassMetadata"](PostsComponent, [{
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"],
         args: [{
@@ -577,7 +754,7 @@ PostsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineCom
                 styleUrls: ['./posts.component.scss'],
                 changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectionStrategy"].OnPush
             }]
-    }], function () { return [{ type: _ngrx_store__WEBPACK_IMPORTED_MODULE_1__["Store"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] }, { type: _services_posts_service__WEBPACK_IMPORTED_MODULE_3__["PostsService"] }, { type: _services_users_service__WEBPACK_IMPORTED_MODULE_4__["UsersService"] }]; }, null); })();
+    }], function () { return [{ type: _ngrx_store__WEBPACK_IMPORTED_MODULE_2__["Store"] }, { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] }, { type: _services_posts_service__WEBPACK_IMPORTED_MODULE_4__["PostsService"] }, { type: _services_users_service__WEBPACK_IMPORTED_MODULE_5__["UsersService"] }]; }, null); })();
 
 
 /***/ }),
@@ -602,6 +779,7 @@ class PostsService {
         this.httpClient = httpClient;
     }
     getPosts(userId) {
+        console.log(userId);
         return this.httpClient.get(`https://5fca3e863c1c220016441fcc.mockapi.io/api/v1/users/${userId}/posts`);
     }
 }
@@ -617,25 +795,27 @@ PostsService.ɵprov = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineInje
 
 /***/ }),
 
-/***/ "qxFs":
-/*!*******************************************!*\
-  !*** ./src/app/reducers/users.reducer.ts ***!
-  \*******************************************/
+/***/ "nyrb":
+/*!*************************************************!*\
+  !*** ./src/app/store/reducers/users.reducer.ts ***!
+  \*************************************************/
 /*! exports provided: usersReducer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "usersReducer", function() { return usersReducer; });
+/* harmony import */ var _actions_users_users_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/users/users.actions */ "6a3v");
+
 const initialState = {
     users: []
 };
 function usersReducer(state = initialState, action) {
     switch (action.type) {
-        case '[Users] Load users': {
+        case _actions_users_users_actions__WEBPACK_IMPORTED_MODULE_0__["UsersActionTypes"].LOAD_USERS: {
             return Object.assign({}, state);
         }
-        case '[Users] Load users success': {
+        case _actions_users_users_actions__WEBPACK_IMPORTED_MODULE_0__["UsersActionTypes"].LOAD_USERS_SUCCESS: {
             return {
                 users: [...action.payload]
             };
